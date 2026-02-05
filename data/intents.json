@@ -1,0 +1,84 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello! I’m here to help you with jobs, resumes, and interviews."]
+    },
+    {
+      "tag": "resume_tips",
+      "patterns": ["How to build resume", "Resume tips", "Help me with resume"],
+      "responses": ["Keep your resume clear. Highlight skills, projects, and measurable achievements."]
+    },
+    {
+      "tag": "interview_tips",
+      "patterns": ["Interview tips", "How to prepare for interview"],
+      "responses": ["Practice common questions, understand the role, and be confident."]
+    },
+    {
+      "tag": "skills_for_datascience",
+      "patterns": ["Skills for data science", "Data scientist skills"],
+      "responses": ["Python, SQL, Machine Learning, Statistics, and Data Visualization are important."]
+    },
+    {
+  "tag": "software_engineer_skills",
+  "patterns": [
+    "skills for software engineer",
+    "software engineer skills",
+    "what skills are needed for software job"
+  ],
+  "responses": [
+  "To become a software engineer, focus on programming languages like Python or Java, understand basic DSA, practice problem-solving, and work on real-world projects. Using GitHub to showcase your work is very important."
+]
+},
+{
+  "tag": "fresher_jobs",
+  "patterns": [
+    "jobs for freshers",
+    "fresher job opportunities",
+    "entry level jobs"
+  ],
+  "responses": [
+  "Freshers can apply for roles such as Associate Software Engineer, Data Analyst, or Junior Developer. Focus on building strong fundamentals, completing relevant projects, and applying consistently through job portals and company career pages."
+] 
+},
+{
+  "tag": "internship_tips",
+  "patterns": [
+    "how to get internship",
+    "internship tips",
+    "ways to find internships"
+  ],
+  "responses": [
+  "Start by strengthening your core skills and working on small projects. Apply for internships on platforms like LinkedIn and Internshala, network with professionals, and regularly practice coding or domain-related tasks."
+]
+},
+{
+  "tag": "job_search_websites",
+  "patterns": [
+    "best job websites",
+    "where to apply for jobs",
+    "job portals for freshers"
+  ],
+  "responses": [
+  "You can apply for jobs on platforms such as LinkedIn, Indeed, Naukri, and Glassdoor. Also check company career pages regularly and customize your resume for each application."
+]
+},
+{
+  "tag": "interview_hr_questions",
+  "patterns": [
+    "hr interview questions",
+    "common hr interview questions",
+    "tell me about yourself"
+  ],
+  "responses": [
+  "HR interviews focus on communication and attitude. Prepare answers for questions like 'Tell me about yourself', strengths and weaknesses, and career goals. Be honest, confident, and clear."
+]
+},
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": ["Sorry, I didn't understand that. Can you please rephrase?"]
+    }
+  ]
+}
