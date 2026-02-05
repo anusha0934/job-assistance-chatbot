@@ -31,7 +31,13 @@ if user_input:
         st.markdown(user_input)
 
     # Bot response
-    response = get_response(user_input)
-    st.session_state.messages.append({"role": "assistant", "content": response})
-    with st.chat_message("assistant"):
-        st.markdown(response)
+  response, confidence = get_response(user_input)
+
+final_response = f"{response}\n\n**Confidence:** {confidence:.2f}"
+
+st.session_state.messages.append(
+    {"role": "assistant", "content": final_response}
+)
+
+with st.chat_message("assistant"):
+    st.markdown(final_response)
