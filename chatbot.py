@@ -19,13 +19,6 @@ def get_response(user_input):
     confidence = max(proba[0])
     tag = model.classes_[proba.argmax()]
 
-    #  ADD THIS BLOCK HERE
-    if confidence < 0.4:
-        return (
-            "I'm not fully confident about this. Could you rephrase or be more specific?",
-            confidence
-        )
-
     # Find response
     for intent in intents['intents']:
         if intent['tag'] == tag:
