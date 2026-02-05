@@ -16,12 +16,20 @@ with open('data/intents.json') as file:
 def get_response(user_input):
     X = vectorizer.transform([user_input])
     proba = model.predict_proba(X)
-    confidence = float(max(proba[0]))
+    confidence = max(proba[0])
     tag = model.classes_[proba.argmax()]
 
-    for intent in intents["intents"]:
-        if intent["tag"] == tag:
-            response = random.choice(intent["responses"])
+    #  ADD THIS BLOCK HERE
+    if confidence < 0.4:
+        return (
+            "I'm not fully confident about this. Could you rephrase or be more specific?",
+            confidence
+        )
+
+    # Find response
+    for intent in intents['intents']:
+        if intent['tag'] == tag:
+            response = random.choice(intent['responses'])
             return response, confidence
 
     return "Sorry, I didn't understand that.", 0.0
