@@ -26,18 +26,20 @@ user_input = st.chat_input("Type your message here...")
 
 if user_input:
     # Show user message
-    st.session_state.messages.append({"role": "user", "content": user_input})
+    st.session_state.messages.append(
+        {"role": "user", "content": user_input}
+    )
     with st.chat_message("user"):
         st.markdown(user_input)
 
     # Bot response
-  response, confidence = get_response(user_input)
+    response, confidence = get_response(user_input)
 
-final_response = f"{response}\n\n**Confidence:** {confidence:.2f}"
+    final_response = f"{response}\n\n**Confidence:** {confidence:.2f}"
 
-st.session_state.messages.append(
-    {"role": "assistant", "content": final_response}
-)
+    st.session_state.messages.append(
+        {"role": "assistant", "content": final_response}
+    )
 
-with st.chat_message("assistant"):
-    st.markdown(final_response)
+    with st.chat_message("assistant"):
+        st.markdown(final_response)
