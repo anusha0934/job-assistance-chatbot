@@ -24,9 +24,9 @@ tag = model.classes_[proba.argmax()]
     for intent in intents['intents']:
         if intent['tag'] == tag:
             response = random.choice(intent['responses'])
-return f"{response}\n\n(Confidence: {confidence:.2f})"
+return response, confidence
 
-    return "Sorry, I didn't understand that."
+    return "Sorry, I didn't understand that.", 0.0
 
 # Test chatbot in terminal
 if __name__ == "__main__":
