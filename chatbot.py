@@ -14,17 +14,15 @@ with open('data/intents.json') as file:
     intents = json.load(file)
 
 def get_response(user_input):
-    # Convert user input to vector
     X = vectorizer.transform([user_input])
     proba = model.predict_proba(X)
-confidence = max(proba[0])
-tag = model.classes_[proba.argmax()]
+    confidence = float(max(proba[0]))
+    tag = model.classes_[proba.argmax()]
 
-    # Find response
-    for intent in intents['intents']:
-        if intent['tag'] == tag:
-            response = random.choice(intent['responses'])
-return response, confidence
+    for intent in intents["intents"]:
+        if intent["tag"] == tag:
+            response = random.choice(intent["responses"])
+            return response, confidence
 
     return "Sorry, I didn't understand that.", 0.0
 
